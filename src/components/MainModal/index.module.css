@@ -1,0 +1,34 @@
+.logoName{
+    margin: 0;
+    font-weight: 900;
+    font-size: 30px;
+    color: #fff;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+ 
+}
+
+.modal{
+    background-color: black;
+    height: 100vh;
+    width: 20%
+}
+
+.navbarName{
+    color: #fff;
+    cursor: pointer;
+}
+
+.navbarLogo{
+    color: #fff;
+}
+
+.navbarComponent{
+    display: flex;
+    align-items: center;
+}
