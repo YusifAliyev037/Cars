@@ -1,4 +1,3 @@
-import React from 'react'
 import Mainmodal from '../../components/MainModal/Mainmodal'
 
 function addproduct() {

@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './index.module.css'
 import { MdOutlineDashboard } from 'react-icons/md'
 import { IoAdd } from 'react-icons/io5'

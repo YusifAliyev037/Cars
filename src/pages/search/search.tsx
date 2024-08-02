@@ -1,4 +1,3 @@
-import React from 'react'
 import Mainmodal from '../../components/MainModal/Mainmodal'
 import { Button, Input, Table } from '@mantine/core';
 import style from "./index.module.css"
