@@ -1,0 +1,13 @@
+.content{
+    display: flex;
+}
+
+.input{
+    display: flex;
+    align-items: center;
+  }
+  
+  .button{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.297);
+  
+  }

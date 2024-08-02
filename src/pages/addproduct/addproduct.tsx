@@ -1,8 +1,11 @@
 import React from 'react'
+import Mainmodal from '../../components/MainModal/Mainmodal'
 
 function addproduct() {
   return (
-    <div>addproduct</div>
+    <div>
+        <Mainmodal/>
+    </div>
   )
 }
 
