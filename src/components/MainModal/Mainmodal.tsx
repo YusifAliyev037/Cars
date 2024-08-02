@@ -4,12 +4,19 @@ import { IoAdd } from 'react-icons/io5'
 import { IoIosSearch } from 'react-icons/io'
 import { useNavigate } from 'react-router-dom'
 import { ROUTER } from '../../constant/router'
-function Mainmodal() {
+import React from 'react'
+
+interface MainModalProps{
+  isOpen?: boolean;
+  onClose?: ()=>void
+}
+const Mainmodal:React.FC<MainModalProps>=( {isOpen, onClose})=> {
 
   const navigate = useNavigate()
+  // if (!isOpen) return null
   return (
     <>
-    <div className={style.modal}>
+    <div className={`${style.modal} ${isOpen ? style.open : ''}`} onClick={onClose}>
     <div className={style.logo}>
       <img src="/logo.jpg" alt="" width={50} />
       <p className={style.logoName}>Renault</p>

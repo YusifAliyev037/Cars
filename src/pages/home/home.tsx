@@ -1,6 +1,8 @@
 import { Button, Input, Table } from '@mantine/core';
 import style from "./index.module.css"
 import Mainmodal from '../../components/MainModal/Mainmodal';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { useState } from 'react';
 // import "@mantine/core/styles.css"
 
 
@@ -10,6 +12,9 @@ function App() {
 
   const currentDate = new Date().toDateString()
   
+  const [modalOpen, setmodalOpen] = useState<boolean>(false);
+
+  const toggleModal = () => setmodalOpen(!modalOpen)
 
   // const rows = elements.map((element) => (
   //   <Table.Tr key={element.name}>
@@ -25,9 +30,11 @@ function App() {
   return (
     <>
     <div className={style.content}>
-      <Mainmodal/>
+      
+      <Mainmodal isOpen={modalOpen} onClose={toggleModal}/>
       <div className={style.section2}>
          <div className={style.maintitle}>
+         <RxHamburgerMenu className={style.ham} onClick={toggleModal} />
           <h2>Bugünün Statistikası</h2>
           <p>{currentDate}</p>
          </div>
