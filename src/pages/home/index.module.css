@@ -1,0 +1,79 @@
+.content{
+    display: flex;
+  
+  }
+  
+  p, h2,h1,h4{
+    margin: 0;
+  }
+  .maintitle{
+    margin-top: 30px;
+    margin-left: 40px;
+    margin-right: 40px;
+    
+  }
+  
+  .section2{
+    background-color: rgb(238, 221, 201);
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-radius: 0 16px 16px 0;
+  }
+  
+  .section3{
+    width: 55%;
+  
+  }
+  
+  .incomecard{
+    background-color: #fff;
+  
+  }
+  
+  .card {
+    background-color: #fff;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px 26px 16px 26px;
+  }
+  
+  
+  .title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  
+  .subtitle{
+    background-color: #dfdcdc;
+    border-radius: 4px;
+    padding: 2px;
+  }
+  
+  .price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .search{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.297);
+    width: 30%;
+    border-radius: 8px;
+    
+  }
+  
+  .input{
+    display: flex;
+    align-items: center;
+  }
+  
+  .button{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.297);
+  
+  }
