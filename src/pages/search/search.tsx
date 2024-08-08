@@ -33,10 +33,14 @@ function search() {
       <Table>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th>Element position</Table.Th>
-          <Table.Th>Element name</Table.Th>
-          <Table.Th>Symbol</Table.Th>
-          <Table.Th>Atomic mass</Table.Th>
+        <Table.Th>Product Desc</Table.Th>
+          <Table.Th>Oem Number</Table.Th>
+          <Table.Th>Gtip</Table.Th>
+          <Table.Th>Marka</Table.Th>
+          <Table.Th>Origin</Table.Th>
+          <Table.Th>QTY</Table.Th>
+          <Table.Th>Price</Table.Th>
+          <Table.Th>Total</Table.Th>
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>

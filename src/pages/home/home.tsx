@@ -2,21 +2,54 @@ import { Button, Input, Table } from '@mantine/core';
 import style from "./index.module.css"
 import Mainmodal from '../../components/MainModal/Mainmodal';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { readData } from '../../firebase/firebase';
 // import "@mantine/core/styles.css"
 
-
+interface DataItem {
+  ourCode:string;
+  productDesc: string;
+  oemNumber: string;
+  gtip: string;
+  marka: string;
+  origin: string;
+  qty: number;
+  price: number;
+  total: number;
+}
 
 
 function App() {
 
   const currentDate = new Date().toDateString()
+
+  const [data, setData] = useState<DataItem[]>([])
   
   const [modalOpen, setmodalOpen] = useState<boolean>(false);
 
   const toggleModal = () => setmodalOpen(!modalOpen)
 
-  // const rows = elements.map((element) => (
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await readData('Data');
+        setData(result || []);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+    fetchData();
+  }, []);
+  console.log(data);
+  const res = Object.values(data)
+
+  console.log(res);
+  
+  
+  
+  
+  // elements.map((element) => (
   //   <Table.Tr key={element.name}>
   //     <Table.Td>{element.position}</Table.Td>
   //     <Table.Td>{element.name}</Table.Td>
@@ -87,14 +120,31 @@ function App() {
         <Table>
       <Table.Thead>
         <Table.Tr>
-          <Table.Th>Element position</Table.Th>
-          <Table.Th>Element name</Table.Th>
-          <Table.Th>Symbol</Table.Th>
-          <Table.Th>Atomic mass</Table.Th>
+        <Table.Th>Our Code</Table.Th>
+          <Table.Th>Product Desc</Table.Th>
+          <Table.Th>Oem Number</Table.Th>
+          <Table.Th>Gtip</Table.Th>
+          <Table.Th>Marka</Table.Th>
+          <Table.Th>Origin</Table.Th>
+          <Table.Th>QTY</Table.Th>
+          <Table.Th>Price</Table.Th>
+          <Table.Th>Total</Table.Th>
         </Table.Tr>
       </Table.Thead>
       <Table.Tbody>
-        {/* {rows} */}
+      {res?.map((item, index) => (
+                <Table.Tr key={index}>
+                  <Table.Td>{item.ourCode}</Table.Td>
+                  <Table.Td>{item.productDesc}</Table.Td>
+                  <Table.Td>{item.oemNumber}</Table.Td>
+                  <Table.Td>{item.gtip}</Table.Td>
+                  <Table.Td>{item.marka}</Table.Td>
+                  <Table.Td>{item.origin}</Table.Td>
+                  <Table.Td>{item.qty}</Table.Td>
+                  <Table.Td>{item.price}</Table.Td>
+                  <Table.Td>{item.total}</Table.Td>
+                </Table.Tr>
+              ))}
 
       </Table.Tbody>
     </Table>
